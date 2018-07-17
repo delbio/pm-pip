@@ -5,7 +5,6 @@
 #
 # Usage: pm update
 #
-set -x
 set -e
 
 # https://stackoverflow.com/a/677212
