@@ -5,8 +5,14 @@
 #
 # Usage: pm update
 #
-
+set -x
 set -e
 
-pip3 install --upgrade pip
+# https://stackoverflow.com/a/677212
+if command -v python3 >/dev/null 2>&1; then
+    pip3 install --upgrade pip
+else
+    pip list --outdated
+fi
+
 pip_upgrade_outdated
