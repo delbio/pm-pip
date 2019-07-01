@@ -10,8 +10,9 @@ set -e
 # https://stackoverflow.com/a/677212
 if command -v python3 >/dev/null 2>&1; then
     pip3 install --upgrade pip
+    pip_upgrade_outdated -3
 else
     pip list --outdated
+    pip_upgrade_outdated -2
 fi
 
-pip_upgrade_outdated
