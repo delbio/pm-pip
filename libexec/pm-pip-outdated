@@ -8,7 +8,7 @@
 set -e
 # https://stackoverflow.com/a/677212
 if command -v python3 >/dev/null 2>&1; then
-    pip3 list --outdated
+  pip3 list -o --format freeze | awk -F"==" '{print $1}'
 else
-    pip list --outdated
+  pip list -o --format freeze | awk -F"==" '{print $1}'
 fi
