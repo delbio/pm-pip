@@ -15,10 +15,9 @@ if command -v python3 >/dev/null 2>&1; then
       pip3 install --upgrade ${pkg}
     done
 else
-    pip list --outdated
+    pip install --upgrade pip
     for pkg in $(pm-pip outdated);
     do
-      pip3 install --upgrade ${pkg}
+      pip install --upgrade ${pkg}
     done
 fi
-
